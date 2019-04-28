@@ -1,0 +1,12 @@
+<div class="row" style="padding-bottom: 5px;">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="addRecipe()" >New Recipe</button>
+    </div>
+</div>
+
+
+<div *ngFor="let recipe of recipes" class="row" style="padding-top: 5px; padding-bottom: 5px;">
+    <div class="col-xs-12">
+        <app-recipe-item [recipe]="recipe" (click)="selectRecipe(recipe)"></app-recipe-item>
+    </div>
+</div>
