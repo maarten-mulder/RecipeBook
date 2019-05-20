@@ -1,6 +1,9 @@
 <app-header (showComponents)="updateShowComponentProperties($event)"></app-header>
-<div class="container">
+<!-- <div class="container">
     <app-recipes *ngIf="showRecipes"></app-recipes>
     <hr>
     <app-shopping-list *ngIf="showShoppingList"></app-shopping-list>
+</div> -->
+<div class="container">
+    <router-outlet></router-outlet>
 </div>
