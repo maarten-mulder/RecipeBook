@@ -1,12 +1,14 @@
 import { Recipe } from './recipe.model';
 import { EventEmitter } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { RecipesComponent } from './recipes.component';
 
 export class RecipeService {
     recipeSelected: EventEmitter<Recipe> = new EventEmitter<Recipe>();
+    highestId: number = 0;
 
     private recipes: Recipe[] = [
-        new Recipe('Lasagne', 
+        new Recipe(0, 'Lasagne', 
                 'A delicious Lasagne, with a lot of cheese.', 
                 'https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/ratatouille_lasagne_28209_16x9.jpg', 
                 [new Ingredient('Lasagne sheets', 6), 
@@ -16,5 +18,17 @@ export class RecipeService {
 
     getRecipes() {
         return this.recipes.slice();
+    }
+
+    addRecipe() {
+        var newRecipe = { ...this.recipes[0] };
+        this.highestId++;
+        newRecipe.id = this.highestId;
+        newRecipe.name += ' ' + (this.recipes.length + 1);
+        this.recipes.push(newRecipe);
+    }
+
+    getRecipeById(id: number): Recipe {
+        return this.recipes.find(r => r.id === id);
     }
 }

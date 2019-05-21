@@ -16,10 +16,4 @@ export class RecipeListComponent implements OnInit {
     this.recipes = this.recipeService.getRecipes();
   }
 
-  addRecipe() {
-    var newRecipe = { ...this.recipes[0] };
-    newRecipe.name += ' ' + (this.recipes.length + 1);
-    this.recipes.push(newRecipe);
-  }
-
 }
