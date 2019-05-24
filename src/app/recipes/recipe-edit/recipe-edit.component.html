@@ -1,5 +1,88 @@
-<h2>This is the Recipe Edit Component</h2>
+<div class="row">
+    <div class="col-xs-12"  >
+        <form (ngSubmit)="onSubmit()" [formGroup]="recipeForm">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input 
+                            type="text" 
+                            name="name"
+                            id="name" 
+                            class="form-control"
+                            formControlName="name" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="imagePath">Image URL</label>
+                        <input 
+                            type="text" 
+                            name="imagePath"
+                            id="imagePath" 
+                            class="form-control"
+                            formControlName="imagePath" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img 
+                        src="" 
+                        name="imagePath"
+                        class="img-responsive"
+                        formControlName="imagePath">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea 
+                            id="description" 
+                            name="description" 
+                            class="form-control" 
+                            rows="6"
+                            formControlName="description" ></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row" >
+                        <div class="col-xs-8">
+                            <label for="Ingredient">Ingredient</label>
+                            <input 
+                                id="ingredient"
+                                name="ingredient" 
+                                type="text" 
+                                class="form-control"
+                                formControlName="ingredient" >
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="Ingredient">Amount</label>
+                            <input 
+                                id="amount" 
+                                name="amount"
+                                type="number" 
+                                class="form-control"
+                                formControlName="amount">
+                        </div>
+                        <div class="col-xs-2">
 
-<h3 *ngIf="recipe">You're editing an existing Recipe!</h3>
-
-<h3 *ngIf="!recipe">You're creating a new Recipe!</h3>
+                            <button id="delete" class="btn btn-danger">X</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

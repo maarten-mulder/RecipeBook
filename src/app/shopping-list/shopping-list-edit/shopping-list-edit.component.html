@@ -29,13 +29,16 @@
             <button 
               class="btn btn-success" 
               type="submit"
-              [disabled]="!shoppingListForm.valid" >Add</button>
+              [disabled]="!shoppingListForm.valid" >{{ editMode ? 'Update' : 'Add' }}</button>
             <button 
               class="btn btn-danger" 
               type="button" 
               (click)="onDelete()"
               [disabled]="!editMode">Delete</button>
-            <button class="btn btn-primary" type="reset">Clear</button>
+            <button 
+              class="btn btn-primary" 
+              type="button" 
+              (click)="onClear()">Clear</button>
           </div>
         </div>
 
