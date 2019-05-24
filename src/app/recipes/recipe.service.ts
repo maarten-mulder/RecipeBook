@@ -1,10 +1,7 @@
 import { Recipe } from './recipe.model';
-import { EventEmitter } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
-import { RecipesComponent } from './recipes.component';
 
 export class RecipeService {
-    recipeSelected: EventEmitter<Recipe> = new EventEmitter<Recipe>();
     highestId: number = 0;
 
     private recipes: Recipe[] = [
