@@ -13,6 +13,5 @@ export class Ingredient {
         this.amount = amount;
         
         Ingredient.nextId++;
-        console.log(Ingredient.nextId);
     }
 }
